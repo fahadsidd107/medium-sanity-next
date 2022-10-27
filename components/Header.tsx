@@ -1,8 +1,17 @@
+import Link from 'next/link'
 import React from 'react'
 
 function Header() {
   return (
-    <div>Header</div>
+    <div>
+        <div>
+<Link href='/'>
+    
+</Link>
+        </div>
+
+        <div></div>
+    </div>
   )
 }
 
