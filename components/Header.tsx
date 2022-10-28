@@ -6,7 +6,7 @@ function Header() {
     <div>
         <div>
 <Link href='/'>
-    <img src='https://links.papareact.com/yvf'/>
+    <img className='w-44 object-contain cursor-pointer' src='https://links.papareact.com/yvf'/>
 </Link>
         </div>
 
