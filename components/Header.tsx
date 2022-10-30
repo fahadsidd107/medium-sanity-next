@@ -4,7 +4,7 @@ import React from 'react'
 function Header() {
     return (
         <header>
-            <div className='flex itemss-center space-x-5'>
+            <div className='flex items-center space-x-5'>
                 <Link href='/'>
                     <img className='w-44 object-contain cursor-pointer' src='https://links.papareact.com/yvf' />
                 </Link>
