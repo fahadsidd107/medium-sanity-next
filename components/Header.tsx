@@ -3,7 +3,7 @@ import React from 'react'
 
 function Header() {
     return (
-        <div>
+        <header>
             <div>
                 <Link href='/'>
                     <img className='w-44 object-contain cursor-pointer' src='https://links.papareact.com/yvf' />
@@ -16,7 +16,7 @@ function Header() {
             </div>
 
             <div></div>
-        </div>
+        </header>
     )
 }
 
