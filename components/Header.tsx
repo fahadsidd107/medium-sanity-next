@@ -15,7 +15,10 @@ function Header() {
                 </div>
             </div>
 
-            <div></div>
+            <div>
+                <h3>Sign In</h3>
+                <h3>Get Started</h3>
+            </div>
         </header>
     )
 }
