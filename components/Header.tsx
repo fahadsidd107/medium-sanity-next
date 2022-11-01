@@ -15,7 +15,7 @@ function Header() {
                 </div>
             </div>
 
-            <div>
+            <div className='flex items-center '>
                 <h3>Sign In</h3>
                 <h3>Get Started</h3>
             </div>
