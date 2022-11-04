@@ -11,6 +11,14 @@ const Home: NextPage = () => {
       </Head>
 
      <Header/>
+
+     <div>
+
+<div></div>
+
+<div></div>
+
+     </div>
     </div>
   )
 }
