@@ -14,7 +14,9 @@ const Home: NextPage = () => {
 
      <div>
 
-<div>Medium is place to write, read and connect</div>
+<div>
+<h1>Medium is place to write, read and connect</h1>
+</div>
 
 <div></div>
 
