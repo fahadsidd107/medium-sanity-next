@@ -15,7 +15,7 @@ const Home: NextPage = () => {
      <div>
 
 <div>
-<h1>Medium is place to write, read and connect</h1>
+<h1 className='text-6xl max-w-xl font-serif'>Medium is place to write, read and connect</h1>
 </div>
 
 <div></div>
