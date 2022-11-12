@@ -15,7 +15,7 @@ const Home: NextPage = () => {
      <div>
 
 <div>
-<h1 className='text-6xl max-w-xl font-serif'><span className='underline decoration-red-500'>Medium</span> is place to write,read and connect</h1>
+<h1 className='text-6xl max-w-xl font-serif'><span className='underline decoration-decoration decoration-4'>Medium</span> is place to write,read and connect</h1>
 <h2>It's easy free to post your thinking on any topic and connect wit millions of readers</h2>
 </div>
 
