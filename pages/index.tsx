@@ -26,9 +26,7 @@ const Home: NextPage = () => {
           </h2>
         </div>
 
-        <div>
-          
-        </div>
+       <img className="hidden md:inline-flex h-32 lg:h-full" src="https://accountablitylab.org/wp-content/uploads/2020/03/Medium-logo.png"/>
       </div>
     </div>
   );
