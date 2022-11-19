@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Header from "../components/Header";
+import Image from "next/image";
+import Logo from "../assets/medium_logo.png";
 
 const Home: NextPage = () => {
   return (
@@ -26,8 +28,11 @@ const Home: NextPage = () => {
           </h2>
         </div>
 
-       <img className="hidden md:inline-flex h-32 lg:h-full" src="https://accountabilitylab.org/wp-content/
-uploads/2020/03/Medium-logo.png" alt="logo"/>
+        <Image
+          className="hidden md:inline-flex h-32 lg:h-full"
+          src={Logo}
+          alt="logo"
+        />
       </div>
     </div>
   );
