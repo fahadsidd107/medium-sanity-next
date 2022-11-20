@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "medium-sanity"
-  },
   "api": {
     "projectId": "vsjmslk9",
     "dataset": "production"
+  },
+  "project": {
+    "name": "medium-sanity"
   },
   "plugins": [
     "@sanity/base",
