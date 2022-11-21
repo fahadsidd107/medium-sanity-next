@@ -2,7 +2,7 @@ import React from "react";
 import { sanityClient, urlFor } from "../../sanity";
 import Header from "../../components/Header";
 import { Post } from "../../typings";
-import { GetStaticPaths, GetStaticProps } from "next";
+import { GetStaticProps } from "next";
 
 interface Props{
   post:Post
