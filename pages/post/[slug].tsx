@@ -2,8 +2,14 @@ import React from "react";
 import { sanityClient, urlFor } from "../../sanity";
 import Header from "../../components/Header";
 import { Post } from "../../typings";
-import { GetStaticProps } from "next";
-function Post() {
+import { GetStaticPaths, GetStaticProps } from "next";
+
+interface Props{
+  post:Post
+}
+function Post({post}:Props) {
+
+  console.log(post)
   return (
     <main>
       <Header />
@@ -13,58 +19,64 @@ function Post() {
 
 export default Post;
 
-export const getSaticPaths = async () => {
-  const qeury = `*[_type=="post"]{
-  _id,
-  slug{
-  current
-}
-}`;
+// export const getSaticPaths= async () => {
+//   const qeury = `*[_type=="post"]{
+//   _id,
+//   slug{
+//   current
+// }
+// }`;
 
-  const posts = await sanityClient.fetch(qeury);
+//   const posts = await sanityClient.fetch(qeury);
 
-  const paths = posts.map((post: Post) => ({
-    params: {
-      slug: post.slug.current,
-    },
-  }));
+//   const paths = posts.map((post: Post) => ({
+//     params: {
+//       slug: post.slug.current,
+//     },
+//   }));
 
-  return {
-    paths,
-    fallback: "blocking",
-  };
-};
+//   return {
+//     paths,
+//     fallback: "blocking",
+//   };
+// };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const qeury = `*[_type=="post" && slug.current == $slug][0]{
-  _id,
-  _createdAt,
-  author->{
-  name,
-  image
-},
-description,
-mainImage,
-slug,
-body
-}`;
 
-  const posts = await sanityClient.fetch(qeury, {
-    slug: params?.slug,
-  });
 
-  if (!posts) {
-    return {
-      notFound: true,
-    };
-  }
+// export const getStaticProps: GetStaticProps = async ({ params }) => {
+//   const qeury = `*[_type=="post" && slug.current == "$slug"][0]{
+//   _id,
+//   _createdAt,
+//   author->{
+//   name,
+//   image
+// },
+// description,
+// mainImage,
+// slug,
+// body
+// }`;
 
-  return {
-    props: {
-      posts,
-    },
-  };
-};
+//   const posts = await sanityClient.fetch(qeury, {
+//     slug: params?.slug,
+//   });
+
+//   if (!posts) {
+//     return {
+//       notFound: true,
+//     };
+//   }
+
+//   return {
+//     props: {
+//       posts,
+//     },
+//   };
+// };
+
+
+
+
 
 // "comments" : *[
 //   _type == "comments" &&
