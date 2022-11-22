@@ -34,6 +34,8 @@ const Home: NextPage = () => {
           alt="logo"
         />
       </div>
+
+      {/* Post */}
     </div>
   );
 };
