@@ -4,12 +4,11 @@ import Header from "../../components/Header";
 import { Post } from "../../typings";
 import { GetStaticProps } from "next";
 
-interface Props{
-  post:Post
+interface Props {
+  post: Post;
 }
-function Post({post}:Props) {
-
-  console.log(post)
+function Post({ post }: Props) {
+  console.log(post);
   return (
     <main>
       <Header />
@@ -19,7 +18,7 @@ function Post({post}:Props) {
 
 export default Post;
 
-export const getSaticPaths= async () => {
+export const getSaticPaths = async () => {
   const qeury = `*[_type=="post"]{
   _id,
   slug{
@@ -40,8 +39,6 @@ export const getSaticPaths= async () => {
     fallback: "blocking",
   };
 };
-
-
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const qeury = `*[_type=="post" && slug.current == "$slug"][0]{
@@ -73,10 +70,6 @@ body
     },
   };
 };
-
-
-
-
 
 // "comments" : *[
 //   _type == "comments" &&
