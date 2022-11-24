@@ -11,3 +11,6 @@ export const config = {
     appVersion:"21-03-25",
     useCdn:process.env.NODE_ENV === "production"
 }
+
+export const sanityClient = createClient(config)
+export const urlFor = (source) => createImageUrlBuilder(config).image(source)
