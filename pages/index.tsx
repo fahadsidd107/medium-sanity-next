@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import Image from "next/image";
 import Logo from "../assets/medium.png";
 
-const Home: NextPage = () => {
+export const Home: NextPage = () => {
   return (
     <div className="max-w-7xl mx-auto">
       <Head>
@@ -38,6 +38,10 @@ const Home: NextPage = () => {
       {/* Post */}
     </div>
   );
+};
+
+export const getServerSideProps = async () => {
+  const qeury =
 };
 
 export default Home;
