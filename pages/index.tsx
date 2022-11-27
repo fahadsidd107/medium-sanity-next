@@ -41,7 +41,7 @@ export const Home: NextPage = () => {
 };
 
 export const getServerSideProps = async () => {
-  const qeury =
+  const qeury = 3
 };
 
 export default Home;
