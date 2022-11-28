@@ -41,7 +41,18 @@ export const Home: NextPage = () => {
 };
 
 export const getServerSideProps = async () => {
-  const qeury = 3
+  const qeury = `*[_type=="post"]{
+    _id,
+    title,
+    author->{
+    name,
+    image
+  },
+  description,
+  mainImage,
+  slug
+    
+  }`;
 };
 
 export default Home;
