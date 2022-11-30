@@ -10,7 +10,7 @@ interface Props{
   posts:any
 }
 
-const Home: NextPage = ({posts}:Props) => {
+const Home: any = ({posts}:Props) => {
   return (
     <div className="max-w-7xl mx-auto">
       <Head>
