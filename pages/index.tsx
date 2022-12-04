@@ -6,6 +6,7 @@ import Logo from "../assets/medium.png";
 import { sanityClient, urlFor } from "../sanity";
 import { Post } from "../typings";
 import { copyFileSync } from "fs";
+import Link from "next/link";
 
 interface Props {
   posts: [Post];
@@ -45,7 +46,9 @@ const Home: any = ({ posts }: Props) => {
 
       {/* Post */}
       <div>
-        
+        {posts.map(post=>(
+          <Link key={post._id}></Link>
+        ))}
       </div>
       {/* Post */}
     </div>
