@@ -5,6 +5,7 @@ import Image from "next/image";
 import Logo from "../assets/medium.png";
 import { sanityClient,urlFor } from "../sanity";
 import {Post} from "../typings"
+import { copyFileSync } from "fs";
 
 
 interface Props{
@@ -12,6 +13,7 @@ interface Props{
 }
 
 const Home: any = ({posts}:Props) => {
+console.log(posts)
   return (
     <div className="max-w-7xl mx-auto">
       <Head>
