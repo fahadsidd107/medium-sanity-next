@@ -3,17 +3,16 @@ import Head from "next/head";
 import Header from "../components/Header";
 import Image from "next/image";
 import Logo from "../assets/medium.png";
-import { sanityClient,urlFor } from "../sanity";
-import {Post} from "../typings"
+import { sanityClient, urlFor } from "../sanity";
+import { Post } from "../typings";
 import { copyFileSync } from "fs";
 
-
-interface Props{
-  posts:[Post]
+interface Props {
+  posts: [Post];
 }
 
-const Home: any = ({posts}:Props) => {
-console.log(posts)
+const Home: any = ({ posts }: Props) => {
+  console.log(posts);
   return (
     <div className="max-w-7xl mx-auto">
       <Head>
@@ -45,6 +44,10 @@ console.log(posts)
       </div>
 
       {/* Post */}
+      <div>
+        
+      </div>
+      {/* Post */}
     </div>
   );
 };
@@ -63,7 +66,7 @@ export const getServerSideProps = async () => {
     
   }`;
 
-  const posts = await sanityClient.fetch(qeury)
+  const posts = await sanityClient.fetch(qeury);
 };
 
 export default Home;
