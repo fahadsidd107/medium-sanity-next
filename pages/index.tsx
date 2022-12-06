@@ -49,7 +49,9 @@ const Home: any = ({ posts }: Props) => {
         {posts.map(post=>(
           <Link key={post._id} href={`/post/${post.slug.current}`}>
             <div>
-             <img src={urlFor(post.mainImage).url()} alt={post.title}/>
+              {post.mainImage && (
+                      <img src={urlFor(post.mainImage).url()} alt={post.title}/>
+              )}
             </div>
           </Link>
         ))}
