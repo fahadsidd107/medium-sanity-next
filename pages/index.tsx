@@ -61,7 +61,7 @@ const Home: any = ({ posts }: Props) => {
             </div>
             <div>
               {post.author.image && (
-                <img src={urlFor(post.author.image).url()} alt={post.author.name} />
+                <img src={urlFor(post.author.image).url()!} alt={post.author.name} />
               )}
             </div>
           </Link>
