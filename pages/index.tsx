@@ -53,6 +53,11 @@ const Home: any = ({ posts }: Props) => {
                       <img src={urlFor(post.mainImage).url()} alt={post.title}/>
               )}
             </div>
+<div>
+  <p></p>
+  <p></p>
+  <p></p>
+</div>
           </Link>
         ))}
       </div>
