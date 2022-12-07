@@ -46,18 +46,24 @@ const Home: any = ({ posts }: Props) => {
 
       {/* Post */}
       <div>
-        {posts.map(post=>(
+        {posts.map((post) => (
           <Link key={post._id} href={`/post/${post.slug.current}`}>
             <div>
               {post.mainImage && (
-                      <img src={urlFor(post.mainImage).url()} alt={post.title}/>
+                <img src={urlFor(post.mainImage).url()} alt={post.title} />
               )}
             </div>
-<div>
-  <p></p>
-  <p></p>
-  <p></p>
-</div>
+            <div>
+              <p>{post.title}</p>
+              <p>
+                {post.description} by {post.author.name}
+              </p>
+            </div>
+            <div>
+              {post.author.image && (
+                <img src={urlFor(post.author.image).url()} alt={post.author.name} />
+              )}
+            </div>
           </Link>
         ))}
       </div>
