@@ -53,16 +53,22 @@ const Home: any = ({ posts }: Props) => {
                 <img src={urlFor(post.mainImage).url()} alt={post.title} />
               )}
             </div>
-            <div>
-              <p>{post.title}</p>
-              <p>
-                {post.description} by {post.author.name}
-              </p>
-            </div>
-            <div>
-              {post.author.image && (
-                <img src={urlFor(post.author.image).url()!} alt={post.author.name} />
-              )}
+            <div className="flex justify-between">
+              <div>
+                <p>{post.title}</p>
+                <p>
+                  {post.description} by {post.author.name}
+                </p>
+              </div>
+              <div>
+                {post.author.image && (
+                  <img
+                    className="h-12 w-12 rounded-full"
+                    src={urlFor(post.author.image).url()!}
+                    alt={post.author.name}
+                  />
+                )}
+              </div>
             </div>
           </Link>
         ))}
