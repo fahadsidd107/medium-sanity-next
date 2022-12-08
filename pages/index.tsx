@@ -53,7 +53,7 @@ const Home: any = ({ posts }: Props) => {
                 <img src={urlFor(post.mainImage).url()} alt={post.title} />
               )}
             </div>
-            <div className="flex justify-between">
+            <div className="flex justify-between p-5 bg-white">
               <div>
                 <p>{post.title}</p>
                 <p>
