@@ -45,7 +45,7 @@ const Home: any = ({ posts }: Props) => {
       </div>
 
       {/* Post */}
-      <div>
+      <div className="grid grid-cols-1 sm:grid-cols-2">
         {posts.map((post) => (
           <Link key={post._id} href={`/post/${post.slug.current}`}>
             <div>
