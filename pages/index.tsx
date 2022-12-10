@@ -48,7 +48,7 @@ const Home: any = ({ posts }: Props) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 lg:pd-6">
         {posts.map((post) => (
           <Link key={post._id} href={`/post/${post.slug.current}`}>
-            <div>
+            <div className="w-full object-cover">
               {post.mainImage && (
                 <img src={urlFor(post.mainImage).url()} alt={post.title} />
               )}
