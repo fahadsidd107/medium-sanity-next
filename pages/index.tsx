@@ -55,8 +55,8 @@ const Home: any = ({ posts }: Props) => {
             </div>
             <div className="flex justify-between p-5 bg-white">
               <div>
-                <p>{post.title}</p>
-                <p>
+                <p className="text-lg font-bold">{post.title}</p>
+                <p className="text-xs">
                   {post.description} by {post.author.name}
                 </p>
               </div>
