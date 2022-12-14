@@ -94,7 +94,9 @@ export const getServerSideProps = async () => {
 
   const posts = await sanityClient.fetch(qeury);
 
-
+  return {props:{
+    posts,
+  }}
 };
 
 export default Home;
