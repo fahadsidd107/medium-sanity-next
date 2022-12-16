@@ -13,7 +13,6 @@ interface Props {
 }
 
 const Home: any = ({ posts }: Props) => {
-
   return (
     <div className="max-w-7xl mx-auto">
       <Head>
@@ -50,7 +49,11 @@ const Home: any = ({ posts }: Props) => {
           <Link key={post._id} href={`/post/${post.slug.current}`}>
             <div className="border rounded-lg group cursor-pointer overflow-hidden">
               {post.mainImage && (
-                <img className="h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out" src={urlFor(post.mainImage).url()} alt={post.title} />
+                <img
+                  className="h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out"
+                  src={urlFor(post.mainImage).url()}
+                  alt={post.title}
+                />
               )}
             </div>
             <div className="flex justify-between p-5 bg-white">
@@ -94,9 +97,11 @@ export const getServerSideProps = async () => {
 
   const posts = await sanityClient.fetch(qeury);
 
-  return {props:{
-    posts,
-  }}
+  return {
+    props: {
+      posts,
+    },
+  };
 };
 
 export default Home;
