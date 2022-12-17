@@ -1,9 +1,13 @@
 import React from 'react'
-
-function [slug]() {
+import { sanityClient,urlFor } from '../../sanity'
+function Post() {
   return (
-    <div>[slug]</div>
+    <div>Post</div>
   )
 }
 
-export default [slug]
+export default Post
+
+export const getSaticPaths = async () =>{
+
+}
