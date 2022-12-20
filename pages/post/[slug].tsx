@@ -48,6 +48,22 @@ mainImage,
 slug,
 body
 }`;
+
+const posts = await sanityClient.fetch(qeury,{
+  slug:params?.slug
+});
+
+if (!posts){
+return{
+  notFound: true
+}
+}
+
+return{
+  props:{
+    posts
+  }
+}
 };
 
 // "comments" : *[
