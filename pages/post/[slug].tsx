@@ -49,21 +49,21 @@ slug,
 body
 }`;
 
-const posts = await sanityClient.fetch(qeury,{
-  slug:params?.slug
-});
+  const posts = await sanityClient.fetch(qeury, {
+    slug: params?.slug,
+  });
 
-if (!posts){
-return{
-  notFound: true
-}
-}
-
-return{
-  props:{
-    posts
+  if (!posts) {
+    return {
+      notFound: true,
+    };
   }
-}
+
+  return {
+    props: {
+      posts,
+    },
+  };
 };
 
 // "comments" : *[
