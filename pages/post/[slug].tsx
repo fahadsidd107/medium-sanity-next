@@ -2,6 +2,7 @@ import React from "react";
 import { sanityClient, urlFor } from "../../sanity";
 import Header from "../../components/Header";
 import { Post } from "../../typings";
+import { GetStaticProps } from "next";
 function Post() {
   return (
     <main>
@@ -28,8 +29,28 @@ export const getSaticPaths = async () => {
     },
   }));
 
-return {
-  paths,
-  fallback:"blocking",
-}
+  return {
+    paths,
+    fallback: "blocking",
+  };
 };
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const qeury = `*[_type=="post" && slug.current == $slug][0]{
+  _id,
+  _createdAt,
+  author->{
+  name,
+  image
+},
+description,
+mainImage,
+slug,
+body
+}`;
+};
+
+// "comments" : *[
+//   _type == "comments" &&
+//   post._ref == ^._id  &&
+//   approved == true],
