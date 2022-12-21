@@ -1,4 +1,3 @@
-import React from "react";
 import { sanityClient, urlFor } from "../../sanity";
 import Header from "../../components/Header";
 import { Post } from "../../typings";
@@ -7,6 +6,7 @@ import { GetStaticProps } from "next";
 interface Props {
   post: Post;
 }
+
 function Post({ post }: Props) {
   console.log(post);
   return (
