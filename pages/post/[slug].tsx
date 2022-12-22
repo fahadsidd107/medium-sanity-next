@@ -7,15 +7,14 @@ interface Props {
   post: Post;
 }
 
-function Post({ post }: Props) {
-  console.log(post);
+function Post(props: Props) {
+  console.log(props.post._createdAt);
   return (
     <main>
       <Header />
     </main>
   );
 }
-
 export default Post;
 
 export const getSaticPaths = async () => {
@@ -42,17 +41,21 @@ export const getSaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const qeury = `*[_type=="post" && slug.current == "$slug"][0]{
-  _id,
-  _createdAt,
-  author->{
-  name,
-  image
-},
-description,
-mainImage,
-slug,
-body
-}`;
+    _id,
+    _createdAt,
+    author->{
+    name,
+    image
+  },
+  "comments" : *[
+    _type == "comments" &&
+    post._ref == ^._id  &&
+    approved == true],
+  description,
+  mainImage,
+  slug,
+  body
+  }`;
 
   const posts = await sanityClient.fetch(qeury, {
     slug: params?.slug,
@@ -71,7 +74,4 @@ body
   };
 };
 
-// "comments" : *[
-//   _type == "comments" &&
-//   post._ref == ^._id  &&
-//   approved == true],
+
