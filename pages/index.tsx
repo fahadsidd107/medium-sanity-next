@@ -4,10 +4,11 @@ import Header from "../components/Header";
 import Image from "next/image";
 import Logo from "../assets/medium.png";
 import { sanityClient,urlFor } from "../sanity";
+import {Post} from "../typings"
 
 
 interface Props{
-  posts:any
+  posts:[Post]
 }
 
 const Home: any = ({posts}:Props) => {
