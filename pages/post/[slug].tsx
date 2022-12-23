@@ -43,6 +43,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const qeury = `*[_type=="post" && slug.current == "$slug"][0]{
     _id,
     _createdAt,
+    title,
     author->{
     name,
     image
@@ -71,5 +72,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       posts,
     },
+    revalidate:60, //after seconds 
   };
 };
