@@ -12,10 +12,7 @@ function Post({post}: Props) {
   return (
     <main>
       <Header />
-      <img className="w-full h-40 object-cover" src={urlFor(post.mainImage).url()!}/>
-      <article>
-        <h1>{post.title}</h1>
-      </article>
+
     </main>
   );
 }
