@@ -12,6 +12,7 @@ function Post(props: Props) {
   return (
     <main>
       <Header />
+      <img/>
     </main>
   );
 }
