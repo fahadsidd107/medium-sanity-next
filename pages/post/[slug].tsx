@@ -7,12 +7,12 @@ interface Props {
   post: Post;
 }
 
-function Post(props: Props) {
-  console.log(props.post._createdAt);
+function Post({post}: Props) {
+  console.log(post._createdAt);
   return (
     <main>
       <Header />
-      <img/>
+      <img src={urlFor(post.mainImage).url()}/>
     </main>
   );
 }
