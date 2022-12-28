@@ -31,7 +31,7 @@ const Home: any = ({ posts }: Props) => {
             is place to write,read and connect
           </h1>
           <h2>
-            It's easy free to post your thinking on any topic and connect wit
+            It's easy free to post your thinking on any topic and connect with
             millions of readers
           </h2>
         </div>
@@ -46,7 +46,7 @@ const Home: any = ({ posts }: Props) => {
       {/* Post */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 lg:pd-6">
         {posts.map((post) => (
-          <Link key={post._id} href={`/post/${post.slug.current}`}>
+          <Link key={post._id} href={`post/${post.slug.current}`}>
             <div className="border rounded-lg group cursor-pointer overflow-hidden">
               {post.mainImage && (
                 <img
