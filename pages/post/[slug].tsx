@@ -1,7 +1,7 @@
 import { sanityClient, urlFor } from "../../sanity";
 import Header from "../../components/Header";
 import { Post } from "../../typings";
-import { GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 
 interface Props {
   post: Post;
@@ -21,7 +21,7 @@ function Post({post}: Props) {
 }
 export default Post;
 
-export const getSaticPaths = async () => {
+export const getSaticPaths:GetStaticPaths = async () => {
   const qeury = `*[_type=="post"]{
   _id,
   slug{
