@@ -21,7 +21,7 @@ function Post({post}: Props) {
 }
 export default Post;
 
-export const getSaticPaths:GetStaticPaths = async () => {
+export const getSaticPaths:any = async () => {
   const qeury = `*[_type=="post"]{
   _id,
   slug{
