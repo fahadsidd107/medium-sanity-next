@@ -7,12 +7,15 @@ interface Props {
   post: Post;
 }
 
-function Post({post}: Props) {
+function Post({ post }: Props) {
   console.log(post._createdAt);
   return (
     <main>
       <Header />
-      <img className="w-full h-40 object-cover" src={urlFor(post.mainImage).url()!}/>
+      <img
+        className="w-full h-40 object-cover"
+        src={urlFor(post.mainImage).url()!}
+      />
       <article>
         <h1>{post.title}</h1>
       </article>
@@ -21,7 +24,7 @@ function Post({post}: Props) {
 }
 export default Post;
 
-export const getSaticPaths:any = async () => {
+export const getSaticPaths: any = async () => {
   const qeury = `*[_type=="post"]{
   _id,
   slug{
