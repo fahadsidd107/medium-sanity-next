@@ -81,7 +81,7 @@ const Home: any = ({ posts }: Props) => {
   );
 };
 
-export const getServerSideProps:any = async () => {
+export const getServerSideProps: any = async () => {
   const qeury = `*[_type=="post"]{
     _id,
     title,
