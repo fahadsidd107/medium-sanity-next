@@ -17,7 +17,8 @@ function Post({ post }: Props) {
         src={urlFor(post.mainImage).url()!}
       />
       <article>
-        <h1>{post.title}</h1>
+        <h1 className="text-3xl mt-10 mb-3">{post.title}</h1>
+        <h2 className="text-xl font-light text-gray-500">{post.description}</h2>
       </article>
     </main>
   );
