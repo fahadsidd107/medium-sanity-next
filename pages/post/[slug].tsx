@@ -21,7 +21,7 @@ function Post({ post }: Props) {
         <h2 className="text-xl font-light text-gray-500 mb-2">{post.description}</h2>
         <div>
           <img className="h-10 w-10 rounded-full" src={urlFor(post.author.image).url()!} alt=""/>
-          <p className="font-extralight"></p>
+          <p className="font-extralight">Blog Post By {post.author.name} - </p>
         </div>
       </article>
     </main>
