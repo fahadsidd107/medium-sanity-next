@@ -2,6 +2,7 @@ import { sanityClient, urlFor } from "../../sanity";
 import Header from "../../components/Header";
 import { Post } from "../../typings";
 import { GetStaticPaths, GetStaticProps } from "next";
+import PortableText from "react-portable-text";
 
 interface Props {
   post: Post;
@@ -25,7 +26,11 @@ function Post({ post }: Props) {
         </div>
 
         <div>
-          
+          <PortableText
+          dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+          projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+          content={post.body}
+          />
         </div>
       </article>
     </main>
