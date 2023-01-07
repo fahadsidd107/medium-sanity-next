@@ -23,6 +23,10 @@ function Post({ post }: Props) {
           <img className="h-10 w-10 rounded-full" src={urlFor(post.author.image).url()!} alt=""/>
           <p className="font-extralight">Blog Post By <span className="text-green-600">{post.author.name} </span>- Puslished at {new Date(post._createdAt).toLocaleString()}</p>
         </div>
+
+        <div>
+          
+        </div>
       </article>
     </main>
   );
