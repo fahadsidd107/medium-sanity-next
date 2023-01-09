@@ -47,6 +47,14 @@ function Post({ post }: Props) {
               h2: (props: any) => (
                 <h1 className="text-xl font-bold my-5">{...props}</h1>
               ),
+              li: ({ children }: any) => (
+                <li className="ml-4 list-disc">{children}</li>
+              ),
+              link: ({ href, children }: any) => (
+                <a href={href} className="text-blue-500 hover:underline">
+                  {children}
+                </a>
+              ),
             }}
           />
         </div>
