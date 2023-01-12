@@ -35,17 +35,17 @@ function Post({ post }: Props) {
           </p>
         </div>
 
-        <div className='mt-10'>
+        <div className="mt-10">
           <PortableText
             dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
             content={post.body}
             serializers={{
               h1: (props: any) => (
-                <h1 className="text-2xl font-bold my-5"{...props}/>
+                <h1 className="text-2xl font-bold my-5" {...props} />
               ),
               h2: (props: any) => (
-                <h1 className="text-xl font-bold my-5" {...props}/>
+                <h1 className="text-xl font-bold my-5" {...props} />
               ),
               li: ({ children }: any) => (
                 <li className="ml-4 list-disc">{children}</li>
@@ -59,8 +59,21 @@ function Post({ post }: Props) {
           />
         </div>
       </article>
-      <hr className="max-w-lg my-5 mx-auto border border-yellow-500"/>
-
+      <hr className="max-w-lg my-5 mx-auto border border-yellow-500" />
+      <form>
+        <label>
+          <span>Name</span>
+          <input placeholder="Muhammad Fahad Siddiqui" type="text" />
+        </label>
+        <label>
+          <span>Email</span>
+          <input placeholder="fsiddiqui107@gmail.com" type="email" />
+        </label>
+        <label>
+          <span>Comment</span>
+          <input placeholder="Muhammad Fahad Siddiqui" type="text" />
+        </label>
+      </form>
     </main>
   );
 }
@@ -79,7 +92,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: 'blocking',
+    fallback: "blocking",
   };
 };
 
