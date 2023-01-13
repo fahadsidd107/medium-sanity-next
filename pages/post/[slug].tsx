@@ -60,7 +60,8 @@ function Post({ post }: Props) {
         </div>
       </article>
       <hr className="max-w-lg my-5 mx-auto border border-yellow-500" />
-      <form>
+      <div className="flex flex-col p-5 max-w-2xl mx-auto mb-10">
+   <form>
         <label>
           <span>Name</span>
           <input placeholder="Muhammad Fahad Siddiqui" type="text" />
@@ -74,6 +75,8 @@ function Post({ post }: Props) {
           <textarea placeholder="Muhammad Fahad Siddiqui" rows={8} />
         </label>
       </form>
+      </div>
+   
     </main>
   );
 }
