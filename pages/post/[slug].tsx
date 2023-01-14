@@ -60,23 +60,25 @@ function Post({ post }: Props) {
         </div>
       </article>
       <hr className="max-w-lg my-5 mx-auto border border-yellow-500" />
-      <div className="flex flex-col p-5 max-w-2xl mx-auto mb-10">
-   <form>
-        <label>
-          <span>Name</span>
-          <input placeholder="Muhammad Fahad Siddiqui" type="text" />
-        </label>
-        <label>
-          <span>Email</span>
-          <input placeholder="fsiddiqui107@gmail.com" type="email" />
-        </label>
-        <label>
-          <span>Comment</span>
-          <textarea placeholder="Muhammad Fahad Siddiqui" rows={8} />
-        </label>
+
+      <form>
+        <div className="flex flex-col p-5 max-w-2xl mx-auto mb-10">
+          <h3 className="text-sm text-yellow-500">Enjoyed the article?</h3>
+          <h4 className="text-3xl font-bold">Leave a comment below</h4>
+          <label>
+            <span>Name</span>
+            <input placeholder="Muhammad Fahad Siddiqui" type="text" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input placeholder="fsiddiqui107@gmail.com" type="email" />
+          </label>
+          <label>
+            <span>Comment</span>
+            <textarea placeholder="Muhammad Fahad Siddiqui" rows={8} />
+          </label>
+        </div>
       </form>
-      </div>
-   
     </main>
   );
 }
