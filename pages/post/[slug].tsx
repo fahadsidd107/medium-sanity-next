@@ -65,17 +65,19 @@ function Post({ post }: Props) {
         <div className="flex flex-col p-5 max-w-2xl mx-auto mb-10">
           <h3 className="text-sm text-yellow-500">Enjoyed the article?</h3>
           <h4 className="text-3xl font-bold">Leave a comment below</h4>
-          <label>
-            <span>Name</span>
-            <input placeholder="Muhammad Fahad Siddiqui" type="text" />
+          <hr className="py-3 mt-2"/>
+          
+          <label className="block mb-5">
+            <span className="text-gray-700">Name</span>
+            <input placeholder="Muhammad Fahad Siddiqui" type="text"  className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500"/>
           </label>
-          <label>
-            <span>Email</span>
-            <input placeholder="fsiddiqui107@gmail.com" type="email" />
+          <label className="block mb-5">
+            <span className="text-gray-700">Email</span>
+            <input placeholder="fsiddiqui107@gmail.com" type="email" className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500" />
           </label>
-          <label>
-            <span>Comment</span>
-            <textarea placeholder="Muhammad Fahad Siddiqui" rows={8} />
+          <label className="block mb-5">
+            <span className="text-gray-700">Comment</span>
+            <textarea placeholder="Muhammad Fahad Siddiqui" rows={8} className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500" />
           </label>
         </div>
       </form>
