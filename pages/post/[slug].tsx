@@ -69,15 +69,15 @@ function Post({ post }: Props) {
           
           <label className="block mb-5">
             <span className="text-gray-700">Name</span>
-            <input placeholder="Muhammad Fahad Siddiqui" type="text"  className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500"/>
+            <input placeholder="Muhammad Fahad Siddiqui" type="text"  className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring"/>
           </label>
           <label className="block mb-5">
             <span className="text-gray-700">Email</span>
-            <input placeholder="fsiddiqui107@gmail.com" type="email" className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500" />
+            <input placeholder="fsiddiqui107@gmail.com" type="email" className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring" />
           </label>
           <label className="block mb-5">
             <span className="text-gray-700">Comment</span>
-            <textarea placeholder="Muhammad Fahad Siddiqui" rows={8} className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500" />
+            <textarea placeholder="Muhammad Fahad Siddiqui" rows={8} className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-yellow-500 outline-none focus:ring" />
           </label>
         </div>
       </form>
