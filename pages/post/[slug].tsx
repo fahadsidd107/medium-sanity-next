@@ -3,13 +3,22 @@ import Header from "../../components/Header";
 import { Post } from "../../typings";
 import { GetStaticPaths, GetStaticProps } from "next";
 import PortableText from "react-portable-text";
+import {useForm,SubmitHandler} from "react-hook-form";
 
 interface Props {
   post: Post;
 }
+interface IFormInput{
+  _id: string;
+  name: string;
+  email: string;
+  comment: string;
+}
 
 function Post({ post }: Props) {
-  console.log(post._createdAt);
+
+  const { register, handleSubmit, watch, formState: { errors } } = useForm<IFormInput>();
+
   return (
     <main>
       <Header />
