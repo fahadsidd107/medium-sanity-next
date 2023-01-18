@@ -3,12 +3,12 @@ import Header from "../../components/Header";
 import { Post } from "../../typings";
 import { GetStaticPaths, GetStaticProps } from "next";
 import PortableText from "react-portable-text";
-import {useForm,SubmitHandler} from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 interface Props {
   post: Post;
 }
-interface IFormInput{
+interface IFormInput {
   _id: string;
   name: string;
   email: string;
@@ -16,8 +16,12 @@ interface IFormInput{
 }
 
 function Post({ post }: Props) {
-
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<IFormInput>();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<IFormInput>();
 
   return (
     <main>
@@ -74,19 +78,40 @@ function Post({ post }: Props) {
         <div className="flex flex-col p-5 max-w-2xl mx-auto mb-10">
           <h3 className="text-sm text-yellow-500">Enjoyed the article?</h3>
           <h4 className="text-3xl font-bold">Leave a comment below</h4>
-          <hr className="py-3 mt-2"/>
-          
+          <hr className="py-3 mt-2" />
+
+          <input
+            {...register("_id")}
+            type="hidden"
+            name="_id"
+            value={post._id}
+          />
           <label className="block mb-5">
             <span className="text-gray-700">Name</span>
-            <input placeholder="Muhammad Fahad Siddiqui" type="text"  className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring"/>
+            <input
+            {...register("name",{required:true})}
+              placeholder="Muhammad Fahad Siddiqui"
+              type="text"
+              className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring"
+            />
           </label>
           <label className="block mb-5">
             <span className="text-gray-700">Email</span>
-            <input placeholder="fsiddiqui107@gmail.com" type="email" className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring" />
+            <input
+                        {...register("email",{required:true})}
+              placeholder="fsiddiqui107@gmail.com"
+              type="email"
+              className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring"
+            />
           </label>
           <label className="block mb-5">
             <span className="text-gray-700">Comment</span>
-            <textarea placeholder="Muhammad Fahad Siddiqui" rows={8} className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-yellow-500 outline-none focus:ring" />
+            <textarea
+                        {...register("comment",{required:true})}
+              placeholder="Muhammad Fahad Siddiqui"
+              rows={8}
+              className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-yellow-500 outline-none focus:ring"
+            />
           </label>
         </div>
       </form>
