@@ -19,7 +19,6 @@ function Post({ post }: Props) {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<IFormInput>();
 
@@ -113,6 +112,17 @@ function Post({ post }: Props) {
               className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-yellow-500 outline-none focus:ring"
             />
           </label>
+          <div>
+            {errors.name && (
+              <p className="text-red-500">The Name field is required.</p>
+            )} 
+            {errors.name && (
+              <p className="text-red-500">The Name field is required.</p>
+            )}
+            {errors.name && (
+              <p className="text-red-500">The Name field is required.</p>
+            )}
+          </div>
         </div>
       </form>
     </main>
