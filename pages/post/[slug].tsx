@@ -112,15 +112,15 @@ function Post({ post }: Props) {
               className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-yellow-500 outline-none focus:ring"
             />
           </label>
-          <div>
+          <div className="flex flex-col p-5">
             {errors.name && (
-              <p className="text-red-500">The Name field is required.</p>
+              <p className="text-red-500">-The name field is required.</p>
             )} 
-            {errors.name && (
-              <p className="text-red-500">The Name field is required.</p>
+            {errors.email && (
+              <p className="text-red-500">-The email field is required.</p>
             )}
-            {errors.name && (
-              <p className="text-red-500">The Name field is required.</p>
+            {errors.comment && (
+              <p className="text-red-500">-The comment field is required.</p>
             )}
           </div>
         </div>
