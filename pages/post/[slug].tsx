@@ -4,6 +4,7 @@ import { Post } from "../../typings";
 import { GetStaticPaths, GetStaticProps } from "next";
 import PortableText from "react-portable-text";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useState } from "react";
 
 interface Props {
   post: Post;
@@ -16,6 +17,8 @@ interface IFormInput {
 }
 
 function Post({ post }: Props) {
+  const [submitted,setSubmitted]=useState<boolean>()
+
   const {
     register,
     handleSubmit,
@@ -25,7 +28,11 @@ function Post({ post }: Props) {
     await fetch("/api/createComment",{
       method: "POST",
       body: JSON.stringify(data)
-    }).then(response => console.log(response)).catch(err => console.error(err));
+    }).then(response => {console.log(response)
+    setSubmitted(true)
+    }).catch((err )=> {console.error(err)
+    setSubmitted(false)
+    });
   }
   return (
     <main>
@@ -78,7 +85,9 @@ function Post({ post }: Props) {
       </article>
       <hr className="max-w-lg my-5 mx-auto border border-yellow-500" />
 
-      <form onSubmit={handleSubmit(onSubmit)}>
+{submitted ? (<>Submitted</>) : (
+<>
+<form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col p-5 max-w-2xl mx-auto mb-10">
           <h3 className="text-sm text-yellow-500">Enjoyed the article?</h3>
           <h4 className="text-3xl font-bold">Leave a comment below</h4>
@@ -135,6 +144,10 @@ function Post({ post }: Props) {
           />
         </div>
       </form>
+</>
+)}
+
+     
     </main>
   );
 }
