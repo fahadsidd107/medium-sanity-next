@@ -90,8 +90,8 @@ function Post({ post }: Props) {
       <hr className="max-w-lg my-5 mx-auto border border-yellow-500" />
 
       {submitted ? (
-        <div className="flex flex-col py-10 my-10 bg-yellow-500 text-white mx-w-2xl mx-auto">
-<h3>Thankyou for submitting your comment !!</h3>
+        <div className="flex flex-col p-10 my-10 bg-yellow-500 text-white mx-w-2xl mx-auto">
+<h3 className="text-3xl font-bold">Thankyou for submitting your comment !!</h3>
 <p>One approved it will appear below</p>
         </div>
       ) : (
