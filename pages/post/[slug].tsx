@@ -21,12 +21,14 @@ function Post({ post }: Props) {
     handleSubmit,
     formState: { errors },
   } = useForm<IFormInput>();
-  const onSubmit: SubmitHandler<IFormInput> =async (data)=>{
-    await fetch("/api/createComment",{
+  const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+    await fetch("/api/createComment", {
       method: "POST",
-      body: JSON.stringify(data)
-    }).then(response => console.log(response)).catch(err => console.error(err));
-  }
+      body: JSON.stringify(data),
+    })
+      .then((response) => console.log(response))
+      .catch((err) => console.error(err));
+  };
   return (
     <main>
       <Header />
@@ -129,7 +131,7 @@ function Post({ post }: Props) {
             )}
           </div>
           <input
-            type="submit" 
+            type="submit"
             value="Click me to submit"
             className="shadow bg-yellow-500 hover:bg-yellow-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer"
           />
