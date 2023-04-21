@@ -21,7 +21,7 @@ function Post({ post }: Props) {
     handleSubmit,
     formState: { errors },
   } = useForm<IFormInput>();
-
+  const onSubmit: SubmitHandler<IFormInput> = data => console.log(data);
   return (
     <main>
       <Header />
@@ -73,7 +73,7 @@ function Post({ post }: Props) {
       </article>
       <hr className="max-w-lg my-5 mx-auto border border-yellow-500" />
 
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col p-5 max-w-2xl mx-auto mb-10">
           <h3 className="text-sm text-yellow-500">Enjoyed the article?</h3>
           <h4 className="text-3xl font-bold">Leave a comment below</h4>
@@ -88,7 +88,7 @@ function Post({ post }: Props) {
           <label className="block mb-5">
             <span className="text-gray-700">Name</span>
             <input
-            {...register("name",{required:true})}
+              {...register("name", { required: true })}
               placeholder="Muhammad Fahad Siddiqui"
               type="text"
               className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring"
@@ -97,7 +97,7 @@ function Post({ post }: Props) {
           <label className="block mb-5">
             <span className="text-gray-700">Email</span>
             <input
-                        {...register("email",{required:true})}
+              {...register("email", { required: true })}
               placeholder="fsiddiqui107@gmail.com"
               type="email"
               className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring"
@@ -106,7 +106,7 @@ function Post({ post }: Props) {
           <label className="block mb-5">
             <span className="text-gray-700">Comment</span>
             <textarea
-                        {...register("comment",{required:true})}
+              {...register("comment", { required: true })}
               placeholder="Muhammad Fahad Siddiqui"
               rows={8}
               className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-yellow-500 outline-none focus:ring"
@@ -115,7 +115,7 @@ function Post({ post }: Props) {
           <div className="flex flex-col p-5">
             {errors.name && (
               <p className="text-red-500">-The name field is required.</p>
-            )} 
+            )}
             {errors.email && (
               <p className="text-red-500">-The email field is required.</p>
             )}
@@ -123,6 +123,11 @@ function Post({ post }: Props) {
               <p className="text-red-500">-The comment field is required.</p>
             )}
           </div>
+          <input
+            type="submit" 
+            value="Click me to submit"
+            className="shadow bg-yellow-500 hover:bg-yellow-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer"
+          />
         </div>
       </form>
     </main>
