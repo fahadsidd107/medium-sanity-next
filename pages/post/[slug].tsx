@@ -91,8 +91,10 @@ function Post({ post }: Props) {
 
       {submitted ? (
         <div className="flex flex-col p-10 my-10 bg-yellow-500 text-white mx-w-2xl mx-auto">
-<h3 className="text-3xl font-bold">Thankyou for submitting your comment !!</h3>
-<p>One approved it will appear below</p>
+          <h3 className="text-3xl font-bold">
+            Thankyou for submitting your comment !!
+          </h3>
+          <p>One approved it will appear below</p>
         </div>
       ) : (
         <>
